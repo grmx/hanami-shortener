@@ -5,6 +5,7 @@ gem 'hanami',       '~> 1.3'
 gem 'hanami-model', '~> 1.3'
 
 gem 'pg'
+gem 'slim'
 
 group :development do
   # Code reloading
@@ -20,6 +21,7 @@ end
 group :test do
   gem 'rspec'
   gem 'capybara'
+  gem 'rspec-hanami'
 end
 
 group :production do
