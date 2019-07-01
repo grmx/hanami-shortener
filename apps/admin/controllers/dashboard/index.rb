@@ -8,7 +8,7 @@ module Admin
 
         expose :links
 
-        def initialize(operation: Links::Operations::List.new)
+        def initialize(operation: ::Links::Operations::List.new)
           @operation = operation
         end
 
