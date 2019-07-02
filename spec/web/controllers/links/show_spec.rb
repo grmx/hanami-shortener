@@ -1,7 +1,7 @@
 RSpec.describe Web::Controllers::Links::Show, type: :action do
-  let(:action) { described_class.new(repo: link_repo) }
-  let(:link_repo) { double(:link_repo, find_by_key: entity) }
-  let(:params) { Hash[] }
+  let(:action) { described_class.new(operation: operation) }
+  let(:params) { Hash[id: 1] }
+  let(:operation) { ->(_) { entity } }
   let(:response) { action.call(params) }
 
   context 'when link exists' do

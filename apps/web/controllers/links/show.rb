@@ -4,14 +4,14 @@ module Web
       class Show
         include Web::Action
 
-        attr_reader :repo
+        attr_reader :operation
 
-        def initialize(repo: LinkRepository.new)
-          @repo = repo
+        def initialize(operation: ::Links::Operations::Show.new)
+          @operation = operation
         end
 
         def call(params)
-          if link = repo.find_by_key(params[:id])
+          if link = operation.call(key: params[:id])
             redirect_to link.url
           else
             self.status = 404

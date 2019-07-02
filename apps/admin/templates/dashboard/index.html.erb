@@ -4,6 +4,6 @@
 
 <ul>
   <% links.each do |link| %>
-    <li><%= link.key %> <%= link.url %></li>
+    <li><%= link.key %> <a href='<%= link.url %>' target='_blank'><%= link.url %></a> (<%= link.click_count %>)</li>
   <% end %>
 </ul>
